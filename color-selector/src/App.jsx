@@ -1,16 +1,17 @@
 import { useState } from "react";
 function App()
 {
-  const [bgcolor,getbgcolor]=useState("white");
+  const [bgcolor,getbgcolor]=useState("#FFFFFF");
   function changecolor(event)
   {
     getbgcolor(event.target.value);
-    console.log(bgcolor);
+    document.body.style.backgroundColor=bgcolor;
   }
+
 return(
   <><h1>Background color selector</h1>
   <label htmlFor="Choose color">Choose color</label>
-  <input type="color" value={bgcolor}></input>
+  <input type="color" value={bgcolor} onChange={changecolor} ></input>
   </>
 );
 }
